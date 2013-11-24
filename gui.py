@@ -26,8 +26,8 @@ class guiButton(pygame.Surface):
         self.font_size = font_size
         self.events = [MOUSEBUTTONDOWN,4,MOUSEBUTTONUP]
         #loading from files
-        self.img = pygame.image.load("images\\gui\\blue.png")        
-        self.pressed = pygame.image.load("images\\gui\\pressed.png")
+        self.img = pygame.image.load(os.path.normpath("images//gui//blue.png"))        
+        self.pressed = pygame.image.load(os.path.normpath("images//gui//pressed.png"))
         if self.sizing!=1:
             self.img=pygame.transform.scale(self.img,(int(self.img.get_width()*self.sizing),self.img.get_height()))
             self.pressed=pygame.transform.scale(self.pressed,(int(self.pressed.get_width()*self.sizing),self.pressed.get_height()))
@@ -38,7 +38,7 @@ class guiButton(pygame.Surface):
         self._width = self.img.get_width()
         self._height = self.img.get_height()
         self.img = self.img.convert_alpha()
-        self.font = pygame.font.Font("fonts\\Kabel.ttf", self.font_size)
+        self.font = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf"), self.font_size)
         self.text_color = ENABLED_TEXT_COLOR
         self._enable = True
         #calling parent constructor
@@ -130,10 +130,10 @@ class guiImageList(pygame.Surface):
         #loading from files
         for img in image_paths:
             self.images.append(pygame.image.load(img).convert_alpha())
-        self.left = pygame.image.load("images\\gui\\left.png").convert_alpha()
-        self.right = pygame.image.load("images\\gui\\right.png").convert_alpha()
-        self.cover = pygame.image.load("images\\gui\\cover.png").convert_alpha()
-        self.bg = pygame.image.load("images\\gui\\bg.png").convert_alpha()
+        self.left = pygame.image.load(os.path.normpath("images//gui//left.png")).convert_alpha()
+        self.right = pygame.image.load(os.path.normpath("images//gui//right.png")).convert_alpha()
+        self.cover = pygame.image.load(os.path.normpath("images//gui//cover.png")).convert_alpha()
+        self.bg = pygame.image.load(os.path.normpath("images//gui//bg.png")).convert_alpha()
         self.slct_img =  pygame.Surface((52,52))
         self.width = 240
         self.height = 70
@@ -187,8 +187,8 @@ class guiTextBox(pygame.Surface):
         self.focus = focus
         self.events = [MOUSEBUTTONDOWN]
 
-        self.mask = pygame.image.load("images\\gui\\textbox.png")
-        self.font = pygame.font.Font("fonts\\Kabel.ttf", 16)
+        self.mask = pygame.image.load(os.path.normpath("images//gui//textbox.png"))
+        self.font = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf"), 16)
         self.text = ""
         self._width = self.mask.get_width()
         self._height = self.mask.get_height()
@@ -291,9 +291,9 @@ class playerDialog():
         background = background.convert()
         clock = pygame.time.Clock()
         #load
-        bg_img = pygame.image.load("images\\gui\\bigbg.png")
-        font = pygame.font.Font("fonts\\Kabel.ttf", 14)
-        font2 = pygame.font.Font("fonts\\Kabel.ttf", 40)
+        bg_img = pygame.image.load(os.path.normpath("images//gui//bigbg.png"))
+        font = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf"), 14)
+        font2 = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf"), 40)
         #controls
         p_num1 = font2.render("Player 1", True, (200,200,200))
         self.text_surf1 = font.render("Name : ", True, (30,30,30))

@@ -17,15 +17,15 @@ COLORS = {"UTILTIES": (150,150,150),
           "GREEN COLOR":(10,250,10),
           "BLUE COLOR":(10,10,250),
           }
-TOKENS = ["images\\dog.png","images\\military.png",
-          "images\\piece.png","images\\eye.png",
-          "images\\scanner.png","images\\skull.png",
-          "images\\tank.png","images\\tron.png",
-          "images\\and.png","images\\worm.png"]
+TOKENS = [os.path.normpath("images//dog.png"),os.path.normpath("images//military.png"),
+          os.path.normpath("images//piece.png"),os.path.normpath("images//eye.png"),
+          os.path.normpath("images//scanner.png"),os.path.normpath("images//skull.png"),
+          os.path.normpath("images//tank.png"),os.path.normpath("images//tron.png"),
+          os.path.normpath("images//and.png"),os.path.normpath("images//worm.png")]
 
-BUILDINGS = ["images\\hotel.png","images\\h1.png",
-             "images\\h2.png","images\\h3.png",
-             "images\\h4.png"]
+BUILDINGS = [os.path.normpath("images//hotel.png"),os.path.normpath("images//h1.png"),
+             os.path.normpath("images//h2.png"),os.path.normpath("images//h3.png"),
+             os.path.normpath("images//h4.png")]
 
 P_COLORS = [(255,25,255),
             (25,255,255),(255,25,25),
@@ -39,7 +39,7 @@ class PopupWindow:
         self.background=pygame.Surface((400,600))
         self.background.fill((220,220,220))
         pygame.font.init()
-        self.fnt = pygame.font.Font("fonts\Kabel.ttf", 20)
+        self.fnt = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf"), 20)
     def draw(self,surf):
         m=self.fnt.render(self.massage,True,BLACK)
         if self.image!=None:
@@ -64,10 +64,10 @@ class StatusWindow():
         self.players = players
         # setting fonts
         pygame.font.init()
-        self.fnt_name = pygame.font.Font("fonts\Kabel.ttf", 28)
-        self.fnt_money = pygame.font.Font("fonts\Kabel.ttf", 24)
-        self.fnt_asset = pygame.font.Font("fonts\Kabel.ttf", 16)
-        self.img = pygame.image.load("images\\gui\\status.png")
+        self.fnt_name = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf"), 28)
+        self.fnt_money = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf"), 24)
+        self.fnt_asset = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf"), 16)
+        self.img = pygame.image.load(os.path.normpath("images//gui//status.png"))
         
             
     def draw(self, background):
@@ -106,8 +106,8 @@ class StatusWindow():
 def get_asset_image(asset):    
     
     #init fonts
-    fnt_title = pygame.font.Font("fonts\Kabel.ttf", 10)
-    fnt_des = pygame.font.Font("fonts\Kabel.ttf", 9)    
+    fnt_title = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf", 10)
+    fnt_des = pygame.font.Font(os.path.normpath("fonts//Kabel.ttf", 9)    
     #creating the image
     surf=pygame.Surface((90,135))
     surf.fill((255,255,255))
@@ -194,7 +194,7 @@ class GameWindow():
         background = pygame.Surface(screen.get_size())
         background = background.convert()
         clock = pygame.time.Clock()
-        bg_img = pygame.image.load("images\\gui\\bigbg.png")
+        bg_img = pygame.image.load(os.path.normpath("images//gui//bigbg.png"))
         
         #initate the tokens for players
         token_list = []
